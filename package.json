@@ -1,6 +1,6 @@
 {
   "name": "nvme-bar0-viewer",
-  "version": "1.0.0",
+  "version": "2.0.2",
   "description": "Parse and validate NVMe Controller Registers from BAR0 space dumps",
   "main": "dist/index.js",
   "bin": {
