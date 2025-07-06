@@ -4,7 +4,7 @@
   "description": "Parse and validate NVMe Controller Registers from BAR0 space dumps",
   "main": "dist/index.js",
   "bin": {
-    "nvmebar0v": "./dist/cli.js"
+    "nvme-bar0-viewer": "./dist/cli.js"
   },
   "scripts": {
     "build": "tsc",

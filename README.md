@@ -1,7 +1,9 @@
 # NVMe BAR0 Parser & Viewer
 
-[![Deploy static content to Pages](https://github.com/wipeseals/nvme-bar0-viewer/actions/workflows/static.yml/badge.svg?branch=master)](https://github.com/wipeseals/nvme-bar0-viewer/actions/workflows/static.yml)
 [![CI](https://github.com/wipeseals/nvme-bar0-viewer/actions/workflows/ci.yml/badge.svg)](https://github.com/wipeseals/nvme-bar0-viewer/actions/workflows/ci.yml)
+[![Publish to NPM](https://github.com/wipeseals/nvme-bar0-viewer/actions/workflows/publish.yml/badge.svg)](https://github.com/wipeseals/nvme-bar0-viewer/actions/workflows/publish.yml)
+[![npm version](https://badge.fury.io/js/nvme-bar0-viewer.svg)](https://badge.fury.io/js/nvme-bar0-viewer)
+[![npm downloads](https://img.shields.io/npm/dm/nvme-bar0-viewer.svg)](https://www.npmjs.com/package/nvme-bar0-viewer)
 
 Parse and validate NVMe Controller Registers from BAR0 space dumps. Available as both web interface and CLI tool.
 
@@ -31,8 +33,15 @@ npx nvme-bar0-viewer --help
 
 ```bash
 npm install -g nvme-bar0-viewer
-nvmebar0v --help
+nvme-bar0-viewer --help
 ```
+
+### Package Information
+
+- **NPM Package**: [nvme-bar0-viewer](https://www.npmjs.com/package/nvme-bar0-viewer)
+- **Binary Name**: `nvme-bar0-viewer`
+- **Releases**: Automated via GitHub releases
+- **CI/CD**: Automatically published to NPM on release
 
 ## 📖 CLI Options
 

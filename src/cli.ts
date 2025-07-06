@@ -57,8 +57,8 @@ function showHelp(): void {
 NVMe BAR0 Space Parser CLI
 
 Usage:
-  npx nvmebar0v [options] [file]
-  cat hexdump.txt | npx nvmebar0v [options]
+  npx nvme-bar0-viewer [options] [file]
+  cat hexdump.txt | npx nvme-bar0-viewer [options]
 
 Options:
   -h, --help     Show this help message
@@ -68,16 +68,16 @@ Options:
 
 Examples:
   # Parse hexdump from stdin
-  cat nvme_dump.txt | npx nvmebar0v
+  cat nvme_dump.txt | npx nvme-bar0-viewer
   
   # Parse binary file
-  npx nvmebar0v nvme_registers.bin
+  npx nvme-bar0-viewer nvme_registers.bin
   
   # Output as JSON
-  npx nvmebar0v --json nvme_dump.txt
+  npx nvme-bar0-viewer --json nvme_dump.txt
   
   # Parse hexdump file
-  npx nvmebar0v -f hexdump.txt
+  npx nvme-bar0-viewer -f hexdump.txt
 
 Input formats:
   - Hexdump format: "00000000: ff 3f 01 14 30 00 00 00 ..."
@@ -87,7 +87,7 @@ Input formats:
 
 function showVersion(): void {
   const packageJson = JSON.parse(fs.readFileSync(__dirname + '/../package.json', 'utf8'));
-  console.log(`nvmebar0v version ${packageJson.version}`);
+  console.log(`nvme-bar0-viewer version ${packageJson.version}`);
 }
 
 async function readInput(options: CliOptions): Promise<string | Buffer> {
