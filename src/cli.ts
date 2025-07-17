@@ -54,11 +54,11 @@ function parseArgs(): CliOptions {
 
 function showHelp(): void {
   console.log(`
-NVMe BAR0 Space Parser CLI
+NVMe Binary Data Parser CLI
 
 Usage:
-  npx nvme-bar0-viewer [options] [file]
-  cat hexdump.txt | npx nvme-bar0-viewer [options]
+  npx nvme-bin-viewer [options] [file]
+  cat hexdump.txt | npx nvme-bin-viewer [options]
 
 Options:
   -h, --help     Show this help message
@@ -67,27 +67,30 @@ Options:
   -f, --file     Input file (binary or hexdump format)
 
 Examples:
-  # Parse hexdump from stdin
-  cat nvme_dump.txt | npx nvme-bar0-viewer
+  # Parse BAR0 registers from hexdump
+  cat nvme_dump.txt | npx nvme-bin-viewer
   
   # Parse binary file
-  npx nvme-bar0-viewer nvme_registers.bin
+  npx nvme-bin-viewer nvme_registers.bin
   
   # Output as JSON
-  npx nvme-bar0-viewer --json nvme_dump.txt
+  npx nvme-bin-viewer --json nvme_dump.txt
   
   # Parse hexdump file
-  npx nvme-bar0-viewer -f hexdump.txt
+  npx nvme-bin-viewer -f hexdump.txt
 
 Input formats:
   - Hexdump format: "00000000: ff 3f 01 14 30 00 00 00 ..."
   - Binary files: raw binary data
+
+Note: This CLI currently supports BAR0 register parsing. 
+      For queue entry parsing, use the web interface.
 `);
 }
 
 function showVersion(): void {
   const packageJson = JSON.parse(fs.readFileSync(__dirname + '/../package.json', 'utf8'));
-  console.log(`nvme-bar0-viewer version ${packageJson.version}`);
+  console.log(`nvme-bin-viewer version ${packageJson.version}`);
 }
 
 async function readInput(options: CliOptions): Promise<string | Buffer> {
@@ -157,7 +160,7 @@ function formatAsTable(result: ParseResult): string {
   
   // Header
   output += '\\n' + '='.repeat(80) + '\\n';
-  output += 'NVMe BAR0 Space Parser Results\\n';
+  output += 'NVMe Binary Data Parser Results\\n';
   output += '='.repeat(80) + '\\n';
   output += `Total bytes parsed: ${result.bytes.length}\\n\\n`;
   

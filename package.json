@@ -1,10 +1,10 @@
 {
-  "name": "nvme-bar0-viewer",
+  "name": "nvme-bin-viewer",
   "version": "2.0.2",
-  "description": "Parse and validate NVMe Controller Registers from BAR0 space dumps",
+  "description": "Parse and analyze NVMe binary data including BAR0 registers and queue entries",
   "main": "dist/index.js",
   "bin": {
-    "nvme-bar0-viewer": "./dist/cli.js"
+    "nvme-bin-viewer": "./dist/cli.js"
   },
   "scripts": {
     "build": "tsc",
@@ -24,14 +24,18 @@
     "pcie",
     "bar0",
     "registers",
+    "queue",
+    "submission",
+    "completion",
     "parser",
-    "cli"
+    "cli",
+    "binary"
   ],
   "author": "wipeseals",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wipeseals/nvme-bar0-viewer.git"
+    "url": "https://github.com/wipeseals/nvme-bin-viewer.git"
   },
   "devDependencies": {
     "@types/jest": "^29.0.0",
