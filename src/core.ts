@@ -3,6 +3,8 @@ import { parseHexDump, parseBinaryFile, parseAndValidateNvmeRegisters } from './
 
 export * from './types';
 export * from './parser';
+export * from './queue-types';
+export * from './queue-parser';
 
 export function parseInput(input: string | Buffer): ParseResult {
   let bytes: Uint8Array;
